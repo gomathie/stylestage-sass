@@ -26,30 +26,30 @@
 //   box-shadow: 0.18em 0.18em var(--color-secondary);
 // }
 
-// [class^="link"]:not(.link-codepen),
-// .profile .container > a {
-//   display: inline-flex;
-//   align-items: center;
-//   justify-content: center;
-//   padding: 0 0.75em;
-//   transform: translate(0, 0);
-//   transition: 180ms all ease-in-out;
-//   font-size: 1.125rem;
-//   line-height: 1;
-//   text-align: center;
-//   text-decoration: none;
+[class^="link"]:not(.link-codepen),
+.profile .container > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.75em;
+  transform: translate(0, 0);
+  transition: 180ms all ease-in-out;
+  font-size: 1.125rem;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
 
-//   &:hover,
-//   &:focus {
-//     transform: translate(-0.15em, -0.15em);
-//     box-shadow: 0.3em 0.3em var(--color-secondary);
-//   }
+  &:hover,
+  &:focus {
+    transform: translate(-0.15em, -0.15em);
+    box-shadow: 0.3em 0.3em var(--color-secondary);
+  }
 
-//   &:focus {
-//     outline-color: transparent;
-//     outline-style: solid;
-//   }
-// }
+  &:focus {
+    outline-color: transparent;
+    outline-style: solid;
+  }
+}
 
 // // stylelint-disable-next-line no-descending-specificity
 // .page-footer [class^="link"] {
