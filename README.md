@@ -4,11 +4,11 @@
 
 [Read the full guidelines](https://stylestage.dev/guidelines/) to ensure your final styles will be ready for inclusion in the showcase!
 
-## To Use
+## Group Members
 
-1. Fork or select "Use this Template"
-2. Once cloned to your computer, run `npm i` to install dependencies needed to compile the Sass
-3. Run `npm start` to launch a hot-reload server that watches for Sass changes.
+1. Bodric Young
+2. TJ Stricklang
+3. Mathias Lago
 
 The final stylesheet will be placed in `public/style.css`.
 
