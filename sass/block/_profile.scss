@@ -1,78 +1,85 @@
-// .profile {
-//   width: 95vw;
-//   max-width: 80ch;
-//   margin: 1rem auto 10vh;
-//   padding: 1.25rem;
-//   z-index: 1;
+.profile {
+  color: $color-primary;
+  position: fixed;
+  right: 30px;
+  bottom: 20px;
+  z-index: 3;
+  padding: 20px;
+  background: linear-gradient(160deg, #1a1000, #0a0a0a);
+  border: 2px solid $color-primary;
+  box-shadow: var(--glow-gold), inset 0 0 20px rgba(0,0,0,0.8);
+  border-radius: 4px;
+  animation: border-glow 2.5s ease-in-out infinite alternate;
 
-//   h4 {
-//     margin: 0;
-//     color: var(--color-secondary);
-//     text-align: center;
-//   }
+  // Card suit decoration
+  &::before {
+    content: '♠';
+    position: absolute;
+    top: 0.4rem;
+    right: 0.6rem;
+    color: rgba($color-primary, 0.4);
+    font-size: 1rem;
+  }
 
-//   .container {
-//     display: grid;
-//     justify-items: center;
-//     grid-gap: 1rem;
+  .container {
+    width: 240px;
 
-//     > a {
-//       min-height: 2em;
-//       border: 2px solid currentColor;
-//       color: var(--color-secondary);
-//     }
-//   }
+    h4 {
+      text-align: center;
+      font-size: 18px;
+      font-family: var(--font-family-display);
+      color: $color-primary;
+      text-shadow: var(--glow-gold);
+      letter-spacing: 0.08em;
+    }
 
-//   ul {
-//     display: flex;
-//     flex-wrap: wrap;
-//     justify-content: center;
-//     margin: 0;
-//     padding: 0;
-//     list-style: none;
+    > a {
+      text-align: center;
+      display: block;
+      margin: auto;
+      border: 1px solid $color-primary;
+      padding: 10px;
+      width: 80%;
+      border-radius: 2px;
+      transition: 0.35s;
+      color: $color-primary;
+      font-family: var(--font-family-display);
+      letter-spacing: 0.05em;
+      background: rgba($color-primary, 0.05);
 
-//     li {
-//       display: flex;
-//       padding: 0.45em;
+      &:hover {
+        background: $color-primary;
+        color: $color-background;
+        box-shadow: var(--glow-gold);
+        text-shadow: none;
+      }
+    }
+  }
 
-//       span:nth-child(1) {
-//         width: auto;
-//         margin-right: 0.25em;
-//         font-weight: var(--font-weight-strong);
-//       }
+  ul {
+    list-style: none;
+    padding: 0;
 
-//       span:nth-child(2) {
-//         flex-grow: 1;
-//         word-break: break-word;
+    li {
+      font-size: 14px;
+      color: $color-secondary;
+      border-bottom: 1px solid rgba($color-primary, 0.1);
+      padding: 0.3rem 0;
 
-//         a {
-//           color: inherit;
-//         }
-//       }
-//     }
-//   }
+      a {
+        color: $color-secondary;
+        transition: 0.3s;
+        &:hover { color: $color-primary; text-shadow: var(--glow-gold); }
+      }
+    }
+  }
+}
 
-//   @media (min-width: 180ch) {
-//     position: fixed;
-//     right: 2vmin;
-//     bottom: 2vmin;
-//     max-width: 30ch;
-//     margin-bottom: 0;
-//     border-radius: var(--border-radius);
-//     background-color: var(--color-light);
-//     box-shadow: 0 2px 5px rgba(color(primary), 0.15);
+@keyframes border-glow {
+  0%   { box-shadow: 0 0 10px rgba($color-primary, 0.3), inset 0 0 20px rgba(0,0,0,0.8); }
+  100% { box-shadow: 0 0 30px rgba($color-primary, 0.7), 0 0 50px rgba($color-primary-alt, 0.3), inset 0 0 20px rgba(0,0,0,0.8); }
+}
 
-//     ul {
-//       justify-content: unset;
-
-//       li {
-//         padding: 0;
-
-//         span:nth-child(1) {
-//           width: 8ch;
-//           margin-right: 0;
-//         }
-//       }
-//     }
-//   }
-// }
+@media (max-width: 1270px) {
+  .profile { display: none; }
+}

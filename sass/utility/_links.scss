@@ -26,30 +26,35 @@
 //   box-shadow: 0.18em 0.18em var(--color-secondary);
 // }
 
+.skip-link {
+  display: none;
+}
+
 [class^="link"]:not(.link-codepen),
 .profile .container > a {
-  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  padding: 0 0.75em;
-  transform: translate(0, 0);
-  transition: 180ms all ease-in-out;
-  font-size: 1.125rem;
   line-height: 1;
-  text-align: center;
   text-decoration: none;
+  font-family: var(--font-family-display);
+  letter-spacing: 0.04em;
+  color: $color-primary;
+  transition: text-shadow 0.3s, color 0.3s;
 
-  &:hover,
-  &:focus {
-    transform: translate(-0.15em, -0.15em);
-    box-shadow: 0.3em 0.3em var(--color-secondary);
-  }
-
-  &:focus {
-    outline-color: transparent;
-    outline-style: solid;
+  &:hover {
+    text-shadow: var(--glow-gold);
+    color: $color-secondary;
   }
 }
+
+.page-footer [class^="link"] {
+  color: $color-secondary;
+  &:hover { color: $color-primary; }
+}
+
+.link-github {
+  svg { display: none; }
+}
+
 
 // // stylelint-disable-next-line no-descending-specificity
 // .page-footer [class^="link"] {

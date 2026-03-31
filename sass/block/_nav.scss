@@ -1,35 +1,128 @@
-// nav {
-//   ul {
-//     display: flex;
-//     flex-wrap: wrap;
-//     justify-content: center;
-//     margin: 0;
-//     padding: 0;
-//     list-style: none;
+nav {
+  position: relative;
+  background: #0a0a0a;
+  border-top: 3px solid $color-primary;
+  border-bottom: 3px solid $color-primary;
+  box-shadow: 0 0 20px rgba($color-primary, 0.5);
 
-//     a {
-//       display: inline-grid;
-//       padding: 0.5rem;
-//       color: var(--color-secondary);
-//       font-size: 1.25rem;
-//       text-decoration: none;
+  // Running bulb line
+  &::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: repeating-linear-gradient(
+      90deg,
+      $color-primary 0, $color-primary 8px,
+      $color-primary-alt 8px, $color-primary-alt 16px
+    );
+    animation: bulb-run 0.5s linear infinite;
+    z-index: 3;
+  }
 
-//       &::before {
-//         width: 100%;
-//         height: 0.33em;
-//         background-color: var(--color-secondary);
-//         opacity: 0.15;
-//         content: "";
-//       }
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: repeating-linear-gradient(
+      90deg,
+      $color-primary-alt 0, $color-primary-alt 8px,
+      $color-primary 8px, $color-primary 16px
+    );
+    animation: bulb-run 0.5s linear infinite reverse;
+    z-index: 3;
+    display: block;
+    right: auto;
+    position: absolute;
+    width: 100%;
+  }
 
-//       &:hover::before,
-//       &:focus::before {
-//         opacity: 1;
-//       }
-//     }
+  ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    background: linear-gradient(180deg, #1a0a00, #0a0a0a);
+    padding: 12px 0;
 
-//     li {
-//       margin: 0.25rem;
-//     }
-//   }
-// }
+    li a {
+      display: inline-grid;
+      padding: 0.5rem 1rem;
+      color: $color-primary;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      margin: 4px;
+      font-family: var(--font-family-display);
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-shadow: var(--glow-gold);
+      border: 1px solid rgba($color-primary, 0.3);
+      background: rgba($color-primary, 0.04);
+      transition: 0.3s;
+
+      &:hover {
+        background: rgba($color-primary, 0.15);
+        border-color: $color-primary;
+        box-shadow: var(--glow-gold), inset 0 0 10px rgba($color-primary, 0.1);
+
+        &::after {
+          top: 0;
+        }
+      }
+
+      &::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: rgba($color-primary, 0.15);
+        top: 100%;
+        transition: 0.35s;
+        border-radius: 2px;
+        line-height: 43px;
+      }
+    }
+
+    li:nth-child(1) a::after { content: 'About';      color: $color-primary; text-align: center; }
+    li:nth-child(2) a::after { content: 'Guidelines'; color: $color-primary; text-align: center; }
+    li:nth-child(3) a::after { content: 'Contribute'; color: $color-primary; text-align: center; }
+    li:nth-child(4) a::after { content: 'Files';      color: $color-primary; text-align: center; }
+    li:nth-child(5) a::after { content: 'All Styles'; color: $color-primary; text-align: center; }
+    li:nth-child(6) a::after { content: 'Resources';  color: $color-primary; text-align: center; }
+  }
+}
+
+@keyframes bulb-run {
+  0%   { background-position: 0 0; }
+  100% { background-position: 16px 0; }
+}
+
+@media (max-width: 600px) {
+  nav ul {
+    padding-top: 30px;
+    top: 50px;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    height: 40px;
+    overflow: hidden;
+
+    &:hover {
+      height: 350px;
+      li { display: block; }
+    }
+
+    li { display: none; }
+  }
+
+  nav::before,
+  nav::after {
+    display: block;
+    cursor: pointer;
+  }
+}

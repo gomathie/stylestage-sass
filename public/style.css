@@ -1,101 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Asset&display=swap");
-:root {
-  --color-primary: #C70000;
-  --color-primary-alt: #7B1414;
-  --color-secondary: #E4A700;
-  --color-background: #d2fbf7;
-  --color-text: #682323;
-  --color-light: #fff;
-  --color-anchor: #C70000;
-  --font-family: "Baloo 2", sans-serif;
-  --font-weight-strong: 500;
-  --font-size-h1: 6rem;
-  --font-size-h2: 3rem;
-  --font-size-h3: 2rem;
-  --font-size-h4: 1.35rem;
-  --font-size-text: 1.15rem;
-  --border-radius: 8px;
-}
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 1 | @import "globals/fonts";
+ *   |         ^^^^^^^^^^^^^^^
+ *   '
+ *   OneDrive\Bureau\BYUI\Advancedcss\stylestage-sass\sass\style.scss 1:9  root stylesheet */
 
-/*
- * [Modified] Modern CSS Reset
- * @link https://github.com/hankchizljaw/modern-css-reset
-*/
-/* Box sizing rules */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-/* Remove default margin */
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-}
-
-html {
-  overflow-x: hidden;
-}
-
-/* Set core body defaults */
-body {
-  min-height: 100vh;
-  font-size: 100%;
-  line-height: 1.5;
-  text-rendering: optimizeSpeed;
-  overflow-x: hidden;
-}
-
-/* Make images easier to work with */
-img {
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
   display: block;
-  max-width: 100%;
-}
-
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-/* Remove all animations and transitions for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-[class^=link]:not(.link-codepen),
-.profile .container > a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 0.75em;
-  transform: translate(0, 0);
-  transition: 180ms all ease-in-out;
-  font-size: 1.125rem;
-  line-height: 1;
-  text-align: center;
-  text-decoration: none;
-}
-[class^=link]:not(.link-codepen):hover, [class^=link]:not(.link-codepen):focus,
-.profile .container > a:hover,
-.profile .container > a:focus {
-  transform: translate(-0.15em, -0.15em);
-  box-shadow: 0.3em 0.3em var(--color-secondary);
-}
-[class^=link]:not(.link-codepen):focus,
-.profile .container > a:focus {
-  outline-color: transparent;
-  outline-style: solid;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import \"globals/fonts\";\d\a   \2502          ^^^^^^^^^^^^^^^\a   \2575 \a   OneDrive\\Bureau\\BYUI\\Advancedcss\\stylestage-sass\\sass\\style.scss 1:9  root stylesheet";
 }
