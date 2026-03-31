@@ -11,7 +11,7 @@
   border-radius: 4px;
   animation: border-glow 2.5s ease-in-out infinite alternate;
 
-  // Card suit decoration
+  // Card suit decoration.
   &::before {
     content: '♠';
     position: absolute;

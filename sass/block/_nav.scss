@@ -5,7 +5,7 @@ nav {
   border-bottom: 3px solid $color-primary;
   box-shadow: 0 0 20px rgba($color-primary, 0.5);
 
-  // Running bulb line
+  // Running bulb line.
   &::before {
     content: '';
     position: absolute;
