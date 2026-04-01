@@ -44,6 +44,30 @@ ol {
   padding: 0;
 }
 
+// Custom Scrollbar
+::-webkit-scrollbar {
+  width: 14px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+  border-left: 1px solid rgba(255, 215, 0, 0.2);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary); // Gold thumb
+  border-radius: 10px;
+  border: 3px solid var(--color-background); // Creates padding around the thumb
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary);
+}
+
+// Custom Text Selection Highlight
+::selection {
+  background: var(--color-primary-alt); // Red/Orange background
+  color: #fff;
+  text-shadow: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;

@@ -5,19 +5,37 @@
   z-index: 200;
   width: 220px;
   padding: 1.25rem;
-  background: linear-gradient(160deg, #1a1000, #0a0a0a);
+  @include casino-felt;
+  box-shadow: var(--glow-gold), inset 0 0 30px rgba(0,0,0,0.8);
   border: 1.5px solid var(--color-primary);
   box-shadow: var(--glow-gold);
   animation: pulse-border 3s ease-in-out infinite alternate;
   border-radius: 2px;
 
   &::before {
-    content: "♠";
+    content: "";
     position: absolute;
-    top: 0.5rem;
-    right: 0.75rem;
-    color: rgba($color-primary, 0.3);
-    font-size: 0.9rem;
+    top: -15px;
+    right: -15px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--color-primary);
+    box-shadow: var(--glow-gold);
+    // Conic gradient creates the roulette wheel slices
+    background: conic-gradient(
+      #00ce00 0 10deg,
+      #e00000 10deg 45deg,
+      #000 45deg 90deg,
+      #e00000 90deg 135deg,
+      #000 135deg 180deg,
+      #e00000 180deg 225deg,
+      #000 225deg 270deg,
+      #e00000 270deg 315deg,
+      #000 315deg 350deg,
+      #00ce00 350deg 360deg
+    );
+    animation: spin-ring 4s linear infinite; // Reuse your existing spin animation!
   }
 
   .container {

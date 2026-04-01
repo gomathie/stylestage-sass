@@ -14,7 +14,7 @@
     margin: 0 auto;
     padding: 3rem 2rem;
     text-align: center;
-    background: #0a0a0a;
+    @include casino-felt;
     border: 2px solid var(--color-primary);
     box-shadow: var(--glow-gold), inset 0 0 40px rgba(0, 0, 0, 0.8);
     animation: pulse-border 2.5s ease-in-out infinite alternate;

@@ -1,3 +1,7 @@
+@keyframes spin-chip {
+  100% { transform: rotate(360deg); }
+}
+
 #contribute {
   margin-bottom: var(--section-gap);
 
@@ -19,7 +23,6 @@
     width: 100%;
   }
 
-  // Steps list — horizontal on desktop (4 columns)
   section:last-of-type ol {
     list-style: none;
     display: grid;
@@ -34,27 +37,62 @@
     li {
       counter-increment: steps;
       position: relative;
-      padding-top: 2.8rem;
+      padding-top: 4rem; 
       font-size: 0.9rem;
       color: var(--color-text);
+      text-align: center; 
 
       &::before {
         content: counter(steps);
         position: absolute;
         top: 0;
-        left: 0;
-        width: 2rem;
-        height: 2rem;
+        left: 50%;
+        margin-left: -1.75rem; 
+        width: 3.5rem;
+        height: 3.5rem;
         display: flex;
         align-items: center;
         justify-content: center;
-        background: var(--color-primary);
-        color: #0a0a0a;
         font-family: var(--font-family-display);
-        font-size: 1rem;
+        font-size: 1.3rem;
         font-weight: 700;
         border-radius: 50%;
-        box-shadow: var(--glow-gold);
+        
+        // The Spin Animation
+        animation: spin-chip 8s linear infinite;
+        transition: transform 0.3s;
+      }
+
+      &:hover::before {
+        animation-play-state: paused;
+      }
+
+      &:nth-child(1)::before { 
+        background: #00509d;
+        color: #fff;
+        border: 5px dashed #fff;
+        box-shadow: 0 0 0 4px #00509d, 0 4px 15px rgba(0,0,0,0.6);
+      }
+
+      &:nth-child(2)::before { 
+        background: #d90429;
+        color: #fff;
+        border: 5px dashed #fff;
+        box-shadow: 0 0 0 4px #d90429, 0 4px 15px rgba(0,0,0,0.6);
+      }
+
+      &:nth-child(3)::before { 
+        background: #2b9348;
+        color: #fff;
+        border: 5px dashed #fff;
+        box-shadow: 0 0 0 4px #2b9348, 0 4px 15px rgba(0,0,0,0.6);
+      }
+
+      &:nth-child(4)::before { 
+        background: #0a0a0a;
+        color: var(--color-primary);
+        border: 5px dashed var(--color-primary);
+        box-shadow: 0 0 0 4px #0a0a0a, var(--glow-gold); // Add neon glow to the last chip!
       }
     }
   }
