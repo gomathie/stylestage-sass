@@ -1,12 +1,11 @@
-// Casino Theme Colors.
-$color-primary:     #FFD700 !default;   // Gold
-$color-primary-alt: #FF4500 !default;   // Casino Red
-$color-secondary:   #FFA500 !default;   // Amber
-$color-background:  #0a0a0a !default;   // Near-black
-$color-surface:     #111108 !default;   // Card surface
-$color-felt:        #0d3d2b !default;   // Casino felt green
+$color-primary:     #FFD700 !default;
+$color-primary-alt: #FF4500 !default;
+$color-secondary:   #FFA500 !default;
+$color-background:  #0a0a0a !default;
+$color-surface:     #111108 !default;
+$color-felt:        #0d3d2b !default;
 
-$color-body: #f5e6c8 !default;          // Warm cream
+$color-body: #f5e6c8 !default;
 $link-color: $color-primary !default;
 $border-radius: 4px !default;
 $font-weight-strong: 700 !default;
@@ -18,7 +17,6 @@ $font-size-h3: clamp(1.2rem, 2vw, 1.75rem) !default;
 $font-size-h4: 1.25rem !default;
 $font-size-text: 1rem !default;
 
-// stylelint-disable
 :root {
   --color-primary:     #{$color-primary};
   --color-primary-alt: #{$color-primary-alt};
@@ -26,10 +24,10 @@ $font-size-text: 1rem !default;
   --color-background:  #{$color-background};
   --color-surface:     #{$color-surface};
   --color-text:        #{$color-body};
-  --color-light: #fff;
-  --color-dark:  #000;
-  --color-anchor: #{$link-color};
-  --color-felt:   #{$color-felt};
+  --color-light:       #fff;
+  --color-dark:        #000;
+  --color-anchor:      #{$link-color};
+  --color-felt:        #{$color-felt};
 
   --font-family:         "Oswald", sans-serif;
   --font-family-display: "Rye", serif;

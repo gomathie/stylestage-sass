@@ -1,128 +1,69 @@
 nav {
-  position: relative;
-  background: #0a0a0a;
-  border-top: 3px solid $color-primary;
-  border-bottom: 3px solid $color-primary;
-  box-shadow: 0 0 20px rgba($color-primary, 0.5);
-
-  // Running bulb line.
-  &::before {
-    content: '';
-    position: absolute;
-    top: -3px;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: repeating-linear-gradient(
-      90deg,
-      $color-primary 0, $color-primary 8px,
-      $color-primary-alt 8px, $color-primary-alt 16px
-    );
-    animation: bulb-run 0.5s linear infinite;
-    z-index: 3;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: repeating-linear-gradient(
-      90deg,
-      $color-primary-alt 0, $color-primary-alt 8px,
-      $color-primary 8px, $color-primary 16px
-    );
-    animation: bulb-run 0.5s linear infinite reverse;
-    z-index: 3;
-    display: block;
-    right: auto;
-    position: absolute;
-    width: 100%;
-  }
+  background: linear-gradient(180deg, #1a0d00 0%, #0d0800 100%);
+  border-bottom: 2px solid var(--color-primary);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba($color-primary, 0.2);
 
   ul {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    gap: 0;
     list-style: none;
-    background: linear-gradient(180deg, #1a0a00, #0a0a0a);
-    padding: 12px 0;
 
-    li a {
-      display: inline-grid;
-      padding: 0.5rem 1rem;
-      color: $color-primary;
-      text-decoration: none;
-      position: relative;
-      overflow: hidden;
-      margin: 4px;
-      font-family: var(--font-family-display);
-      font-size: 0.9rem;
-      letter-spacing: 0.08em;
-      text-shadow: var(--glow-gold);
-      border: 1px solid rgba($color-primary, 0.3);
-      background: rgba($color-primary, 0.04);
-      transition: 0.3s;
+    li {
+      a {
+        display: block;
+        padding: 0.85rem 1.2rem;
+        color: var(--color-text);
+        font-family: var(--font-family);
+        font-size: 0.85rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        text-decoration: none;
+        border-right: 1px solid rgba($color-primary, 0.12);
+        transition: background 0.2s, color 0.2s;
+        position: relative;
+        overflow: hidden;
 
-      &:hover {
-        background: rgba($color-primary, 0.15);
-        border-color: $color-primary;
-        box-shadow: var(--glow-gold), inset 0 0 10px rgba($color-primary, 0.1);
+        &:hover {
+          background: rgba($color-primary, 0.12);
+          color: var(--color-primary);
+          text-shadow: none;
+        }
 
+        // Slide-in hover reveal
         &::after {
+          content: "";
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          background: rgba($color-primary, 0.1);
+          top: 100%;
+          transition: top 0.3s;
+          left: 0;
+        }
+
+        &:hover::after {
           top: 0;
         }
       }
 
-      &::after {
-        content: '';
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        background: rgba($color-primary, 0.15);
-        top: 100%;
-        transition: 0.35s;
-        border-radius: 2px;
-        line-height: 43px;
+      &:first-child a {
+        border-left: 1px solid rgba($color-primary, 0.12);
       }
     }
 
-    li:nth-child(1) a::after { content: 'About';      color: $color-primary; text-align: center; }
-    li:nth-child(2) a::after { content: 'Guidelines'; color: $color-primary; text-align: center; }
-    li:nth-child(3) a::after { content: 'Contribute'; color: $color-primary; text-align: center; }
-    li:nth-child(4) a::after { content: 'Files';      color: $color-primary; text-align: center; }
-    li:nth-child(5) a::after { content: 'All Styles'; color: $color-primary; text-align: center; }
-    li:nth-child(6) a::after { content: 'Resources';  color: $color-primary; text-align: center; }
-  }
-}
-
-@keyframes bulb-run {
-  0%   { background-position: 0 0; }
-  100% { background-position: 16px 0; }
-}
-
-@media (max-width: 600px) {
-  nav ul {
-    padding-top: 30px;
-    top: 50px;
-    width: 100%;
-    flex-direction: column;
-    text-align: center;
-    height: 40px;
-    overflow: hidden;
-
-    &:hover {
-      height: 350px;
-      li { display: block; }
-    }
-
-    li { display: none; }
-  }
-
-  nav::before,
-  nav::after {
-    display: block;
-    cursor: pointer;
+    li:nth-child(1) a::after { content: 'About';      color: var(--color-primary); text-align: center; line-height: 2.8; }
+    li:nth-child(2) a::after { content: 'Guidelines'; color: var(--color-primary); text-align: center; line-height: 2.8; }
+    li:nth-child(3) a::after { content: 'Contribute'; color: var(--color-primary); text-align: center; line-height: 2.8; }
+    li:nth-child(4) a::after { content: 'Files';      color: var(--color-primary); text-align: center; line-height: 2.8; }
+    li:nth-child(5) a::after { content: 'All Styles'; color: var(--color-primary); text-align: center; line-height: 2.8; }
+    li:nth-child(6) a::after { content: 'Resources';  color: var(--color-primary); text-align: center; line-height: 2.8; }
   }
 }

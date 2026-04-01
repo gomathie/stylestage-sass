@@ -1,57 +1,43 @@
+// Skip link
+.skip-link {
+  display: none;
+}
+
+// Body
 body {
   background-color: var(--color-background);
   color: var(--color-text);
   font-family: var(--font-family);
   background-image:
-    radial-gradient(circle at 20% 50%, rgba(255,215,0,0.03) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(255,69,0,0.04) 0%, transparent 50%);
+    radial-gradient(ellipse at 15% 30%, rgba(255, 215, 0, 0.04) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 70%, rgba(255, 69, 0, 0.04) 0%, transparent 55%);
 }
 
+// Main wrapper
 main {
-  padding-top: 3vh;
-  padding-bottom: 5vh;
-  width: 1300px;
-  margin: auto;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 3rem 2rem 5rem;
 
   &:focus {
     outline: none;
   }
 
-  h3 {
-    color: var(--color-primary);
+  > .container {
+    width: 100%;
   }
 }
 
+// Article / section base
 article {
   section {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding-top: 3vh;
-    padding-bottom: 5vh;
-    border-bottom: 1px solid rgba($color-primary, 0.15);
-  }
-}
-
-article,
-.page-footer,
-#styles {
-  .container {
-    margin-right: auto;
-    margin-left: auto;
   }
 }
 
 article,
 #styles {
-  padding: 1rem;
-}
-
-.page-footer ul,
-.features {
-  display: grid;
-  margin: 0 0 2rem;
   padding: 0;
-  grid-gap: 1em;
-  list-style: none;
 }
