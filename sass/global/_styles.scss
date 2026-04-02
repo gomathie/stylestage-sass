@@ -27,7 +27,6 @@
     margin: 0 auto;
   }
 
-  // 3-column card grid
   ul.features {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -36,48 +35,49 @@
     margin: 2rem 0;
 
     li {
-      background: $color-surface;
-      border: 1px solid rgba($color-primary, 0.15);
+      background: var(--color-text); // Use the Cream/Antique color
+      color: #000;
+      border-radius: 12px;
+      border: 1px solid rgba(0, 0, 0, 0.1); // Softer border for the cream background
       padding: 0;
       text-align: left;
-      transition: border-color 0.3s, box-shadow 0.3s;
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s;
       display: flex;
       flex-direction: column;
       overflow: hidden;
-
+      position: relative; 
+      
       &:hover {
-        border-color: var(--color-primary);
-        box-shadow: 0 0 20px rgba($color-primary, 0.2);
+        transform: translateY(-10px) rotate(2deg);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.5), var(--glow-gold);
+        z-index: 10; 
       }
 
-      // Card image placeholder at top
       &::before {
-        content: "♠";
         display: flex;
         width: 100%;
         height: 120px;
-        background: linear-gradient(135deg, #1a1000, #0d0d05);
-        color: rgba($color-primary, 0.15);
-        font-size: 4rem;
+        background: rgba(0, 0, 0, 0.03);
+        font-size: 4.5rem;
         align-items: center;
         justify-content: center;
-        border-bottom: 1px solid rgba($color-primary, 0.1);
+        border-bottom: 1px solid #eee;
       }
 
       > span {
         display: flex;
         flex-direction: column;
-        padding: 1rem;
+        padding: 1.2rem;
         gap: 0.35rem;
         flex: 1;
 
-        // Style title link
         > a {
           font-family: var(--font-family-display);
-          font-size: 1rem;
-          color: var(--color-primary);
+          font-size: 1.1rem;
+          color: #000;
           font-weight: 400;
           letter-spacing: 0.03em;
+          text-shadow: none;
 
           &::after {
             content: " →";
@@ -86,11 +86,37 @@
           }
         }
 
-        // Author
         > span {
-          font-size: 0.82rem;
-          color: rgba(245, 230, 200, 0.6);
+          font-size: 0.85rem;
+          color: rgba(0, 0, 0, 0.6); 
         }
+      }
+      
+      // Card 1: Black Spades
+      &:nth-child(3n+1) {
+        &::before {
+          content: "♠";
+          color: #000;
+        }
+        > span > a:hover { color: #666; }
+      }
+      
+      // Card 2: Red Hearts
+      &:nth-child(3n+2) {
+        &::before {
+          content: "♥";
+          color: #d90429; // Casino Red
+        }
+        > span > a:hover { color: #d90429; }
+      }
+      
+      // Card 3: Black Clubs
+      &:nth-child(3n+3) {
+        &::before {
+          content: "♣";
+          color: #000;
+        }
+        > span > a:hover { color: #666; }
       }
     }
   }
