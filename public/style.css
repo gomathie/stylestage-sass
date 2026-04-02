@@ -20,7 +20,7 @@
   --font-size-h4: 1.25rem;
   --font-size-text: 1rem;
   --border-radius: 4px;
-  --max-width: 1200px;
+  --max-width: 2000px;
   --section-gap: 4rem;
   --glow-gold: 0 0 6px #FFD700, 0 0 18px #FFD700, 0 0 36px #FFA500;
   --glow-red: 0 0 6px #FF4500, 0 0 16px #FF4500, 0 0 30px #FF0000;
@@ -410,6 +410,12 @@ nav ul li:first-child a {
   margin-bottom: 1rem;
   width: 100%;
 }
+#about section:nth-child(1) p {
+  padding-top: 3.5rem;
+}
+#about section:nth-child(1) blockquote > p {
+  padding-top: 0px;
+}
 #about section:nth-child(2) ul {
   position: relative;
   width: 100%;
@@ -431,7 +437,7 @@ nav ul li:first-child a {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  border: 1px solid black;
+  border: 1px solid #000;
   border-radius: 10px;
   background: #fff;
   color: #000;
@@ -439,14 +445,14 @@ nav ul li:first-child a {
   font-weight: 700;
   letter-spacing: 0.04em;
   text-align: center;
-  box-shadow: 0 10px 20px black;
+  box-shadow: 0 10px 20px #000;
   cursor: pointer;
   transform: translate(calc(-50% + var(--column-x)), var(--stack-y));
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 #about section:nth-child(2) ul li:hover {
-  transform: translate(calc(-46% + var(--column-x)), calc(var(--stack-y) - clamp(40px, 2vw, 30px))) rotate(10deg);
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.32);
+  transform: translate(calc(-45% + var(--column-x)), calc(var(--stack-y) - clamp(40px, 2vw, 30px))) rotate(10deg);
+  box-shadow: 0 20px 30px #000;
 }
 #about section:nth-child(2) ul li::before,
 #about section:nth-child(2) ul li::after {

@@ -21,6 +21,16 @@
       width: 100%;
     }
   }
+  section:nth-child(1) {
+    p {
+      padding-top: 3.5rem;
+    }
+
+    blockquote > p {
+      padding-top: 0px;
+    }
+  }
+
 
   // CSS features list — styled as chips
   section:nth-child(2) {
@@ -54,7 +64,7 @@
         justify-content: center;
         align-items: flex-start;
 
-        border: 1px solid black;
+        border: 1px solid #000;
         border-radius: 10px;
         background: #fff;
         color: #000;
@@ -62,17 +72,17 @@
         font-weight: 700;
         letter-spacing: 0.04em;
         text-align: center;
-        box-shadow: 0 10px 20px black;
+        box-shadow: 0 10px 20px #000;
         cursor: pointer;
         transform: translate(calc(-50% + var(--column-x)), var(--stack-y));
         transition: transform 0.25s ease, box-shadow 0.25s ease;
 
         &:hover {
           transform: translate(
-            calc(-46% + var(--column-x)),
+            calc(-45% + var(--column-x)),
             calc(var(--stack-y) - #{$hover-rise})
           ) rotate(10deg);
-          box-shadow: 0 20px 30px rgba(0, 0, 0, 0.32);
+          box-shadow: 0 20px 30px #000;
         }
       }
 
